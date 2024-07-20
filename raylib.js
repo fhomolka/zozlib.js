@@ -122,6 +122,17 @@ class RaylibJs {
         this.targetFPS = fps;
     }
 
+    //Note(Fix): We do not have a "monitor" per-se, so instead, we return the size of the drawable window
+    //RLAPI int GetMonitorWidth(int monitor); // Get specified monitor width (current video mode used by monitor)
+    GetMonitorWidth(monitor /*unused*/) {
+        return window.innerWidth
+    }
+
+    //RLAPI int GetMonitorHeight(int monitor); // Get specified monitor height (current video mode used by monitor)
+    GetMonitorHeight(monitor /*unused*/) {
+        return window.innerHeight
+    }
+
     GetScreenWidth() {
         return this.ctx.canvas.width;
     }
