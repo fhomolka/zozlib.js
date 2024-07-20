@@ -117,18 +117,24 @@ class RaylibJs {
         return false;
     }
 
+    // RLAPI void SetWindowSize(int width, int height); // Set window dimensions
+    SetWindowSize(width, height) {
+        this.ctx.canvas.width = width;
+        this.ctx.canvas.height = height;
+    }
+
     SetTargetFPS(fps) {
         console.log(`The game wants to run at ${fps} FPS, but in Web we gonna just ignore it.`);
         this.targetFPS = fps;
     }
 
     //Note(Fix): We do not have a "monitor" per-se, so instead, we return the size of the drawable window
-    //RLAPI int GetMonitorWidth(int monitor); // Get specified monitor width (current video mode used by monitor)
+    // RLAPI int GetMonitorWidth(int monitor); // Get specified monitor width (current video mode used by monitor)
     GetMonitorWidth(monitor /*unused*/) {
         return window.innerWidth
     }
 
-    //RLAPI int GetMonitorHeight(int monitor); // Get specified monitor height (current video mode used by monitor)
+    // RLAPI int GetMonitorHeight(int monitor); // Get specified monitor height (current video mode used by monitor)
     GetMonitorHeight(monitor /*unused*/) {
         return window.innerHeight
     }
