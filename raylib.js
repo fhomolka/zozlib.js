@@ -361,6 +361,16 @@ class RaylibJs {
         this.ctx.fillText(text, posX, posY + fontSize);
     }
 
+    // RLAPI void SetRandomSeed(unsigned int seed); // Set the seed for the random number generator
+    SetRandomSeed(seed_num) {
+        console.log(`The game wants to set the seed to ${seed_num}, but in Web we gonna just ignore it.`);
+    }
+
+    //RLAPI int GetRandomValue(int min, int max); // Get a random value between min and max (both included)
+    GetRandomValue(min, max) { 
+        return Math.floor(Math.random() * (max + 1 - min) + min)
+    }
+
     raylib_js_set_entry(entry) {
         this.entryFunction = this.wasm.instance.exports.__indirect_function_table.get(entry);
     }
