@@ -378,6 +378,7 @@ class RaylibJs {
     //RLAPI int GetRandomValue(int min, int max); // Get a random value between min and max (both included)
     GetRandomValue(min, max) { 
         return Math.floor(Math.random() * (max + 1 - min) + min)
+    }
 
     ColorFromHSV(result_ptr, hue, saturation, value) {
         const buffer = this.wasm.instance.exports.memory.buffer;
